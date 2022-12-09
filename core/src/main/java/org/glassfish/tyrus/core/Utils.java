@@ -318,7 +318,16 @@ public class Utils {
             return buffer;
             // create new buffer
         } else {
-            int newSize = remaining + len;
+            final int doubleSize = remaining * 2;
+            final int concatSize = remaining + len;
+            final int newSize;
+
+            if (doubleSize > incomingBufferSize || concatSize > doubleSize) {
+                newSize = concatSize;
+            } else {
+                newSize = doubleSize;
+            }
+
             if (newSize > incomingBufferSize) {
                 throw new IllegalArgumentException(LocalizationMessages.BUFFER_OVERFLOW());
             } else {
