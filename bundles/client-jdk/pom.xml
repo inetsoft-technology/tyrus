@@ -20,7 +20,7 @@
     <parent>
         <groupId>org.glassfish.tyrus.bundles</groupId>
         <artifactId>tyrus-bundles</artifactId>
-        <version>1.20</version>
+        <version>1.20-fixes</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -44,7 +44,6 @@
     </dependencies>
 
     <build>
-        <finalName>tyrus-standalone-client-jdk-1.20-fixes</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
